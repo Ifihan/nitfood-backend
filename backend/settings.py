@@ -7,7 +7,9 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://nitfood-backend-production.up.railway.app/"]
+
+CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app/"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
