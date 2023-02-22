@@ -10,6 +10,7 @@ python-decouple = "*"
 drf-yasg = "*"
 black = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
