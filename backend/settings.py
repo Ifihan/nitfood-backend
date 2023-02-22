@@ -7,7 +7,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = ["https://nitfood-backend-production.up.railway.app/"]
+ALLOWED_HOSTS = ["nitfood-backend-production.up.railway.app/"]
 
 CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app/"]
 
