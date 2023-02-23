@@ -11,6 +11,8 @@ drf-yasg = "*"
 black = "*"
 gunicorn = "*"
 whitenoise = "*"
+pillow = "*"
+isort = "*"
 
 [dev-packages]
 

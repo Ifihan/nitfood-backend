@@ -1,6 +1,6 @@
 import os
-
 from pathlib import Path
+
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +9,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = ["nitfood-backend-production.up.railway.app"]
+ALLOWED_HOSTS = ["127.0.0.1", "nitfood-backend-production.up.railway.app"]
 
 CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app"]
 
@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "djoser",
     "drf_yasg",
     "accounts",
+    "product",
 ]
 
 MIDDLEWARE = [
