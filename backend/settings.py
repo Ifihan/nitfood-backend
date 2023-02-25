@@ -114,12 +114,12 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
+# EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
 
-ANYMAIL = {
-    "MAILJET_API_KEY": config("MAILJET_API_KEY"),
-    "MAILJET_SECRET_KEY": config("MAILJET_SECRET_KEY"),
-}
+# ANYMAIL = {
+#     "MAILJET_API_KEY": config("MAILJET_API_KEY"),
+#     "MAILJET_SECRET_KEY": config("MAILJET_SECRET_KEY"),
+# }
 
 DJOSER = {
     "SEND_ACTIVATION_EMAIL": True,
@@ -132,6 +132,6 @@ DJOSER = {
 }
 
 
-MAILJET_SEND_URL = "https://api.mailjet.com/v3/send"
+# MAILJET_SEND_URL = "https://api.mailjet.com/v3/send"
 
-MAILJET_USER = "no-reply@ifihan.dev"
+# MAILJET_USER = "no-reply@ifihan.dev"
