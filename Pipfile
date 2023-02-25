@@ -13,6 +13,9 @@ gunicorn = "*"
 whitenoise = "*"
 pillow = "*"
 isort = "*"
+django-anymail = "*"
+django-cors-headers = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
