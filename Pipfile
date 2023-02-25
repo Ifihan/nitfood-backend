@@ -16,6 +16,7 @@ isort = "*"
 django-anymail = "*"
 django-cors-headers = "*"
 psycopg2 = "*"
+dj-database-url = "*"
 
 [dev-packages]
 

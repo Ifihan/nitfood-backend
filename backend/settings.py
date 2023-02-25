@@ -1,8 +1,9 @@
 import os
-
-from pathlib import Path
-from decouple import config
 from datetime import timedelta
+from pathlib import Path
+
+import dj_database_url
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +22,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "rest_framework",
     "djoser",
     "anymail",
     "corsheaders",
-
     "drf_yasg",
     "accounts",
     "product",
@@ -67,14 +66,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config("POSTGRES_DB"),
-        'USER': config("POSTGRES_USER"),
-        'PASSWORD': config("POSTGRES_PASSWORD"),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -132,7 +127,7 @@ DJOSER = {
     "ACTIVATION_URL": "auth/activation/?uid={uid}&token={token}",
     "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password-confirm/{uid}/{token}",
     "SERIALIZERS": {
-        'activation': 'myapp.email.AwesomeActivationEmail',
+        "activation": "myapp.email.AwesomeActivationEmail",
     },
 }
 

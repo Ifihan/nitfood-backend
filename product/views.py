@@ -1,13 +1,16 @@
-from rest_framework import generics, response, status, permissions
 from django.shortcuts import get_object_or_404
+from rest_framework import generics, permissions, response, status
 
-from product.models import FoodItem, Food
-from product.serializers import ListFoodItemSerializer, EditCreateFoodItemSerializer
+from product.models import Food, FoodItem
+from product.serializers import EditCreateFoodItemSerializer, ListFoodItemSerializer
+
 
 class FoodItemListCreateAPIView(generics.ListCreateAPIView):
     """View for uploading or retrieving food items."""
+
     # uncomment permission class later after setting up email verification
     queryset = FoodItem.objects.all()
+
     # permission_classes = [permissions.IsAuthenticated]
     def get_serializer_class(self):
         if self.request.method == "GET":
@@ -21,6 +24,8 @@ class FoodItemListCreateAPIView(generics.ListCreateAPIView):
         food_sizes = [item.id for item in food.category.sizes.all()]
 
         if size_id not in food_sizes:
-            return response.Response({"message": "Invalid size"}, status=status.HTTP_400_BAD_REQUEST)
+            return response.Response(
+                {"message": "Invalid size"}, status=status.HTTP_400_BAD_REQUEST
+            )
         # super(self).post(request, **kwargs)
         return self.create(request, **kwargs)

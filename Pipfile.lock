@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e5a0fb7e0036fc655828cf4a572e275d8d0dbacdbb2268ce73f42c87ddf62201"
+            "sha256": "f7fc755da9103e727d435e5a8b75b0ccd6d4c9ae4ea713179c4125e05ba27aca"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -284,12 +284,20 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==0.7.1"
         },
+        "dj-database-url": {
+            "hashes": [
+                "sha256:5c2993b91801c0f78a8b19e642b497b90831124cbade0c265900d4c1037b4730",
+                "sha256:b23b15046cb38180e0c95207bcc90fe5e9dbde8eef16065907dd85cf4ca7036c"
+            ],
+            "index": "pypi",
+            "version": "==1.2.0"
+        },
         "django": {
             "hashes": [
                 "sha256:44f714b81c5f190d9d2ddad01a532fe502fa01c4cb8faf1d081f4264ed15dcd8",
                 "sha256:f2f431e75adc40039ace496ad3b9f17227022e8b11566f4b363da44c7e44761e"
             ],
-            "markers": "python_full_version >= '3.8.0'",
+            "markers": "python_version >= '3.8'",
             "version": "==4.1.7"
         },
         "django-anymail": {
@@ -302,11 +310,11 @@
         },
         "django-cors-headers": {
             "hashes": [
-                "sha256:37e42883b5f1f2295df6b4bba96eb2417a14a03270cb24b2a07f021cd4487cf4",
-                "sha256:f9dc6b4e3f611c3199700b3e5f3398c28757dcd559c2f82932687f3d0443cfdf"
+                "sha256:5fbd58a6fb4119d975754b2bc090f35ec160a8373f276612c675b00e8a138739",
+                "sha256:684180013cc7277bdd8702b80a3c5a4b3fcae4abb2bf134dceb9f5dfe300228e"
             ],
             "index": "pypi",
-            "version": "==3.13.0"
+            "version": "==3.14.0"
         },
         "django-templated-mail": {
             "hashes": [
@@ -767,11 +775,11 @@
         },
         "whitenoise": {
             "hashes": [
-                "sha256:cf8ecf56d86ba1c734fdb5ef6127312e39e92ad5947fef9033dc9e43ba2777d9",
-                "sha256:fe0af31504ab08faa1ec7fc02845432096e40cc1b27e6a7747263d7b30fb51fa"
+                "sha256:599dc6ca57e48929dfeffb2e8e187879bfe2aed0d49ca419577005b7f2cc930b",
+                "sha256:a02d6660ad161ff17e3042653c8e3f5ecbb2a2481a006bde125b9efb9a30113a"
             ],
             "index": "pypi",
-            "version": "==6.3.0"
+            "version": "==6.4.0"
         }
     },
     "develop": {}

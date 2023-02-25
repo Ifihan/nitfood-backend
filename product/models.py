@@ -1,7 +1,9 @@
 from django.db import models
 
+
 class Category(models.Model):
     """Category Model."""
+
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -10,12 +12,16 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
+
 class CategorySize(models.Model):
     name = models.CharField(max_length=50)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name="sizes", null=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, related_name="sizes", null=True
+    )
 
     def __str__(self):
         return self.name
+
 
 class Food(models.Model):
     name = models.CharField(max_length=100)
@@ -25,8 +31,10 @@ class Food(models.Model):
     def __str__(self):
         return self.name
 
+
 class FoodItem(models.Model):
     """Model for the Food Items displayed on the home page by the admin."""
+
     food = models.ForeignKey(Food, on_delete=models.CASCADE, null=True)
     market_name = models.CharField(max_length=250)
     location = models.CharField(max_length=500)
