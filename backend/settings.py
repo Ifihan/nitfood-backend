@@ -127,7 +127,7 @@ DJOSER = {
     "ACTIVATION_URL": "auth/activation/?uid={uid}&token={token}",
     "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password-confirm/{uid}/{token}",
     "SERIALIZERS": {
-        "activation": "myapp.email.AwesomeActivationEmail",
+        # "activation": "myapp.email.AwesomeActivationEmail",
     },
 }
 
