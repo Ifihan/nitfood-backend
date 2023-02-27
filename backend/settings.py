@@ -2,8 +2,8 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-import dj_database_url
 from decouple import config
+from dj_database_url import parse as db_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -11,7 +11,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = ["127.0.0.1", "nitfood-backend-production.up.railway.app"]
+ALLOWED_HOSTS = ["127.0.0.1", "nitfood-backend-production.up.railway.app", "0.0.0.0"]
 
 CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app"]
 
@@ -65,12 +65,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-DATABASES = {
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+DATABASES = {"default": config("DATABASE_URL", cast=db_url)}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

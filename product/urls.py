@@ -5,5 +5,5 @@ from product.views import FoodItemListCreateAPIView
 app_name = "product"
 
 urlpatterns = [
-    path("", FoodItemListCreateAPIView.as_view(), name="food-items"),
+    path("", FoodItemListCreateAPIView.as_view(), name="food_items"),
 ]
