@@ -21,3 +21,5 @@ COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY . .
+
+CMD [ "python", "manage.py", "runserver" ]
