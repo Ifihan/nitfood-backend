@@ -18,7 +18,7 @@ class FoodItemListCreateAPIView(generics.ListCreateAPIView):
         return EditCreateFoodItemSerializer
 
     def post(self, request, **kwargs):
-        size_id = int(request.data.get("size"))
+        size_id = request.data.get("size")
         food_id = request.data.get("food")
         food = get_object_or_404(Food.objects.all(), id=food_id)
         food_sizes = [item.id for item in food.category.sizes.all()]
@@ -27,5 +27,7 @@ class FoodItemListCreateAPIView(generics.ListCreateAPIView):
             return response.Response(
                 {"message": "Invalid size"}, status=status.HTTP_400_BAD_REQUEST
             )
-        # super(self).post(request, **kwargs)
         return self.create(request, **kwargs)
+    
+
+# list of food

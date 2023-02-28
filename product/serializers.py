@@ -28,8 +28,14 @@ class ListFoodSerializer(serializers.ModelSerializer):
         fields = ["name", "food_image", "category"]
 
 
+class FoodItemSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Food
+        fields = ["name"]
+
 class ListFoodItemSerializer(serializers.ModelSerializer):
-    food = FoodSerializer()
+    food = FoodItemSerializer(read_only=True)
 
     class Meta:
         model = FoodItem
