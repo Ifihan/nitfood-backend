@@ -20,6 +20,12 @@ RUN pip install -U pipenv
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy --ignore-pipfile
 
-COPY . .
+COPY . . 
 
-CMD [ "python", "manage.py", "runserver" ]
+ARG PORT
+
+ENV PORT=$PORT
+
+RUN echo $PORT
+
+ENTRYPOINT python manage.py runserver 0.0.0.0:$PORT
