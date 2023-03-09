@@ -130,8 +130,8 @@ ANYMAIL = {
 DJOSER = {
     "SEND_ACTIVATION_EMAIL": True,
     "SEND_CONFIRMATION_EMAIL": True,
-    "ACTIVATION_URL": "auth/activation/?uid={uid}&token={token}",
-    "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password-confirm/{uid}/{token}",
+    "ACTIVATION_URL": "api/v1/auth/activation/?uid={uid}&token={token}",
+    "PASSWORD_RESET_CONFIRM_URL": "api/v1/auth/reset-password-confirm/{uid}/{token}",
     # "SERIALIZERS": {
     # },
 }
