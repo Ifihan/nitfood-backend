@@ -119,24 +119,24 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-# EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 
-# ANYMAIL = {
-#     "MAILJET_API_KEY": config("MAILJET_API_KEY"),
-#     "MAILJET_SECRET_KEY": config("MAILJET_SECRET_KEY"),
-# }
+ANYMAIL = {
+    "MAILGUN_API_KEY": config("MAILGUN_API_KEY"),
+    "MAILGUN_API_URL": "https://api.mailgun.net/v3/",
+    "MAILGUN_SENDER_DOMAIN": "mg.ifihan.dev",
+}
 
 DJOSER = {
     "SEND_ACTIVATION_EMAIL": True,
     "SEND_CONFIRMATION_EMAIL": True,
     "ACTIVATION_URL": "auth/activation/?uid={uid}&token={token}",
     "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password-confirm/{uid}/{token}",
-    "SERIALIZERS": {
-        # "activation": "myapp.email.AwesomeActivationEmail",
-    },
+    # "SERIALIZERS": {
+    # },
 }
 
-
+# configure logging
 # MAILJET_SEND_URL = "https://api.mailjet.com/v3/send"
 
 # MAILJET_USER = "no-reply@ifihan.dev"
