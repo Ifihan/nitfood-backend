@@ -32,6 +32,8 @@ INSTALLED_APPS = [
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# turn on before you push
+
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
@@ -121,16 +123,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 
-ANYMAIL = {
-    "MAILGUN_API_KEY": config("MAILGUN_API_KEY"),
-    "MAILGUN_API_URL": "https://api.mailgun.net/v3/",
-    "MAILGUN_SENDER_DOMAIN": "mg.ifihan.dev",
-}
+# ANYMAIL = {
+#     "MAILGUN_API_KEY": config("MAILGUN_API_KEY"),
+#     "MAILGUN_API_URL": "https://api.mailgun.net/v3/",
+#     "MAILGUN_SENDER_DOMAIN": "mg.ifihan.dev",
+# }
 
 DJOSER = {
-    "SEND_ACTIVATION_EMAIL": True,
-    "SEND_CONFIRMATION_EMAIL": True,
-    "ACTIVATION_URL": "api/v1/auth/activation/?uid={uid}&token={token}",
+    # "SEND_ACTIVATION_EMAIL": True,
+    # "SEND_CONFIRMATION_EMAIL": True,
+    # "ACTIVATION_URL": "api/v1/auth/activation/?uid={uid}&token={token}",
     "PASSWORD_RESET_CONFIRM_URL": "api/v1/auth/reset-password-confirm/{uid}/{token}",
     # "SERIALIZERS": {
     # },
