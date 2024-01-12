@@ -22,10 +22,10 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY . . 
 
-ARG PORT
+# ARG PORT
 
-ENV PORT=$PORT
+# ENV PORT=$PORT
 
-RUN echo $PORT
+# RUN echo $PORT
 
-ENTRYPOINT python manage.py runserver 0.0.0.0:$PORT
+# ENTRYPOINT python manage.py runserver 0.0.0.0:$PORT

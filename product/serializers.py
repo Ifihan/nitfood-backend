@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Category, Food, FoodItem
+from .models import Category, Food, FoodItem, Location, MarketName
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -34,12 +34,13 @@ class FoodItemSerializer(serializers.ModelSerializer):
         model = Food
         fields = ["name"]
 
+
 class ListFoodItemSerializer(serializers.ModelSerializer):
     food = FoodItemSerializer(read_only=True)
 
     class Meta:
         model = FoodItem
-        fields = ["id", "food", "market_name", "location", "size", "price"]
+        fields = ["id", "food", "location", "market_name", "size", "price"]
 
 
 class EditCreateFoodItemSerializer(serializers.ModelSerializer):
@@ -50,3 +51,14 @@ class EditCreateFoodItemSerializer(serializers.ModelSerializer):
 
 # ListFood sErializer
 # override the create method. if the id is in the list,
+
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
+        fields = ["id", "name", "created_at"]
+
+
+class MarketPlaceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MarketName
+        fields = ["id", "name", "location_name", "created_at"]
