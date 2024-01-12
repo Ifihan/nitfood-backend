@@ -11,7 +11,12 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = ["127.0.0.1", "nitfood-backend-production.up.railway.app", "0.0.0.0"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "nitfood-backend-production.up.railway.app",
+    "0.0.0.0",
+    "nitfood-backend.onrender.com",
+]
 
 CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app"]
 
@@ -31,7 +36,7 @@ INSTALLED_APPS = [
     "product",
 ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # turn on before you push
 
 SESSION_COOKIE_SECURE = True
