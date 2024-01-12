@@ -40,7 +40,7 @@ class ListFoodItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FoodItem
-        fields = ["id", "food", "market_name", "location", "size", "price"]
+        fields = ["id", "food", "location", "market_name", "size", "price"]
 
 
 class EditCreateFoodItemSerializer(serializers.ModelSerializer):
@@ -61,4 +61,4 @@ class LocationSerializer(serializers.ModelSerializer):
 class MarketPlaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarketName
-        fields = ["id", "name", "created_at"]
+        fields = ["id", "name", "location_name", "created_at"]

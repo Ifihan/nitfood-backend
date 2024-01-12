@@ -56,8 +56,8 @@ class FoodItem(models.Model):
     """Model for the Food Items displayed on the home page by the admin."""
 
     food = models.ForeignKey(Food, on_delete=models.CASCADE, null=True)
-    market_name = models.ForeignKey(MarketName, max_length=500, on_delete=models.SET_NULL, null=True)
     location = models.ForeignKey(Location, max_length=500, on_delete=models.SET_NULL, null=True)
+    market_name = models.ForeignKey(MarketName, max_length=500, on_delete=models.SET_NULL, null=True)
     size = models.ForeignKey(CategorySize, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     is_published = models.BooleanField(default=False)
