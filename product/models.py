@@ -47,7 +47,7 @@ class MarketName(models.Model):
     """Model for the marketplace based on the location chosen by the user"""
 
     name = models.CharField(max_length=500, null=True)
-    location_name = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
