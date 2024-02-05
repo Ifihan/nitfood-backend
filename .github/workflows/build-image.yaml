@@ -70,7 +70,6 @@ jobs:
       - name: Build, tag, and push image to GHCR
         env:
           IMAGE_TAG: ${{ steps.meta.outputs.tags }}
-          PUSHED_IMAGE: ${{ steps.meta.outputs.tags }}
         id: build-image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
@@ -78,8 +77,8 @@ jobs:
           push: true
           tags: |
             type=sha,enable=true,priority=100,prefix=sha-,suffix=,format=short
-        script: |
-          docker pull ${{ steps.meta.outputs.tags }}
+          script: |
+            docker pull ${{ steps.meta.outputs.tags }}
 
   main:
     runs-on: ubuntu-latest
@@ -92,6 +91,8 @@ jobs:
     steps:
       - name: Deploy to On-Prem Server
         uses: appleboy/ssh-action@master
+        env:
+          PUSHED_IMAGE: ${{ steps.meta.outputs.tags }}
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
@@ -103,5 +104,5 @@ jobs:
             
             docker stop django-app || true
             docker rm django-app || true
-            docker run -d --name django-app -p 8000:8000 ${{ PUSHED_IMAGE}}
+            docker run -d --name django-app -p 8000:8000 ${{ PUSHED_IMAGE }}
             
