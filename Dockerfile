@@ -22,6 +22,12 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY . . 
 
+# Make the entrypoint script executable
+RUN chmod +x entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["./entrypoint.sh"]
+
 # ARG PORT
 
 # ENV PORT=$PORT
