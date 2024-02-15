@@ -19,6 +19,7 @@ psycopg2 = "*"
 dj-database-url = "*"
 model-bakery = "*"
 django-filter = "*"
+typing-extensions = "*"
 
 [dev-packages]
 

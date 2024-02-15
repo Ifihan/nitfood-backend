@@ -14,8 +14,9 @@ DEBUG = config("DEBUG")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "0.0.0.0",
-    "nitfood-backend.onrender.com",
+    # "nitfood-backend.onrender.com",
     "nitfood.azurewebsites.net",
+    "nitfood-backend-o3fl.onrender.com"
 ]
 
 CSRF_TRUSTED_ORIGINS = ["https://nitfood-backend-production.up.railway.app"]
