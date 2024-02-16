@@ -7,16 +7,16 @@ app_name = "accounts"
 urlpatterns = [
     path("register/", UserViewSet.as_view({"post": "create"}), name="register"),
     path("login/", TokenObtainPairView.as_view(), name="login"),
-    path(
-        "activation/",
-        UserViewSet.as_view({"post": "activation"}),
-        name="activation",
-    ),
-    path(
-        "resend-activation/",
-        UserViewSet.as_view({"post": "resend_activation"}),
-        name="resend_activation",
-    ),
+    # path(
+    #     "activation/",
+    #     UserViewSet.as_view({"post": "activation"}),
+    #     name="activation",
+    # ),
+    # path(
+    #     "resend-activation/",
+    #     UserViewSet.as_view({"post": "resend_activation"}),
+    #     name="resend_activation",
+    # ),
     path(
         "reset-password/",
         UserViewSet.as_view({"post": "reset_password"}),
